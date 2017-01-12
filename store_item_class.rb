@@ -3,20 +3,19 @@ class Store
   attr_writer :product_names, :product_color, :product_names
   attr_reader :price
 
-  def initialize(product_names,product_color,product_price)
-    @name = product_names
-    @color = product_color
-    @price = product_price
+  def initialize(product_hash)
+    @name = product_hash[:product_names]
+    @color = product_hash[:product_color]
+    @price = product_hash[:product_price]
 
   end
   
   def info
-    "#{@product_names} with #{@product_color} color cost #{@product_price}"
+    "#{@name} with #{@color} color cost #{@price}"
   end
 end
-product1 = Store.new("Hp Pro-book","black",250)
-product2 = Store.new("HTC M7", "black & white", 160)
-product3 = Store.new("Ipad", "rose", 280)
-p product1.price(100)
-puts product3.product_color
-p product3.price(300)
+product1 = Store.new( {product_names: "Hp Pro-book", product_color: "black", product_price: 250} )
+product2 = Store.new( {product_names: "HTC M7", product_color:"black & white", product_price: 160} )
+product3 = Store.new( {product_names: "Ipad", product_color: "rose", product_price: 280} )
+puts product1.info
+puts product2.product_color ="yellow"

@@ -1,10 +1,9 @@
 class Store
 
-  attr_writer :product_names, :product_color, :product_names
-  attr_reader :price
+  attr_accessor :product_name, :product_color, :product_price
 
   def initialize(product_hash)
-    @name = product_hash[:product_names]
+    @name = product_hash[:product_name]
     @color = product_hash[:product_color]
     @price = product_hash[:product_price]
 
@@ -14,8 +13,9 @@ class Store
     "#{@name} with #{@color} color cost #{@price}"
   end
 end
-product1 = Store.new( {product_names: "Hp Pro-book", product_color: "black", product_price: 250} )
-product2 = Store.new( {product_names: "HTC M7", product_color:"black & white", product_price: 160} )
-product3 = Store.new( {product_names: "Ipad", product_color: "rose", product_price: 280} )
+product1 = Store.new( {product_name: "Hp Pro-book", product_color: "black", product_price: 250} )
+product2 = Store.new( {product_color:"black & white",product_name: "HTC M7", product_price: 160} )
+product3 = Store.new( {product_color: "rose", product_price: 280, product_name: "Ipad"} )
 puts product1.info
 puts product2.product_color ="yellow"
+puts product3.product_price

@@ -43,3 +43,4 @@ employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 7000
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
 
 puts manager.give_all_raise
+puts manager.give_all_raise

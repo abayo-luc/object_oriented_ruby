@@ -1,4 +1,4 @@
-module Vehicles
+module Motion
   def initialize
     @speed = 0
     @direction = 'north'
@@ -19,14 +19,14 @@ module Vehicles
 end
 
 class Car
-  include Vehicles
+  include Motion
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
 class Bike
-  include Vehicles
+  include Motion
 
   def ring_bell
     puts "Ring ring!"
